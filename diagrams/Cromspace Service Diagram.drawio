@@ -1,0 +1,25 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="X21R_rwbOOPFM0D_OSX_">
+    <mxGraphModel dx="1793" dy="1505" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="iJ5wL5wf5476697elv1f-2" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Api Gateway&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="169" y="221" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iJ5wL5wf5476697elv1f-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="436" y="-123" width="1524" height="725" as="geometry" />
+        </mxCell>
+        <mxCell id="iJ5wL5wf5476697elv1f-4" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;User Service&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="676" y="-56" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iJ5wL5wf5476697elv1f-5" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;Space Service&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="811" y="319" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iJ5wL5wf5476697elv1f-8" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;Project Manager&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1183" y="-30" width="158" height="69" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
