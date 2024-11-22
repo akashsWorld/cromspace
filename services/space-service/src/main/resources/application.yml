@@ -1,0 +1,22 @@
+SPACE_SERVICE:
+  SERVER_PORT: "${SERVER_PORT:8501}"
+  DATABASE_HOST: "${DATABASE_HOST:localhost}"
+  DATABASE_PORT: "${DATABASE_PORT:5432}"
+  DATABASE_NAME: "${DATABASE_NAME:postgres}"
+spring:
+  application:
+    name: space-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: password
+    url: jdbc:postgresql://${SPACE_SERVICE.DATABASE_HOST}:${SPACE_SERVICE.DATABASE_PORT}/${SPACE_SERVICE.DATABASE_NAME}
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 5
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+server:
+  port: ${SPACE_SERVICE.SERVER_PORT}

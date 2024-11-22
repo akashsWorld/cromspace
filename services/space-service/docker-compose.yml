@@ -1,0 +1,10 @@
+# These configurations specifically for the current service where it defines.
+services:
+  postgres:
+    image: postgres:17.0-alpine3.20
+    container_name: spacedb
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
