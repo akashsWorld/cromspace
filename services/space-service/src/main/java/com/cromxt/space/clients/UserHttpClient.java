@@ -20,7 +20,7 @@ public class UserHttpClient {
     ) {
         this.restClient = restClient;
         this.BASE_URL = String.format(
-                "http://%s:%s/cromxt/service",
+                "http://%s:%s/cromxt/service/",
                 environment.getProperty("SPACE_SERVICE.USER_SERVICE_HOST"),
                 environment.getProperty("SPACE_SERVICE.USER_SERVICE_PORT")
         );
@@ -28,18 +28,19 @@ public class UserHttpClient {
     }
 
 
-    public UserDetailsResponse getUserDetails(String username,String token) {
+    public UserDetailsResponse getUserDetails(String username) {
         return restClient.get()
-                .uri(BASE_URL + "username")
+                .uri(BASE_URL + username)
                 .header("X-API-KEY", API_KEY)
                 .retrieve()
                 .onStatus(
-                        httpStatus -> httpStatus.value() == 200,
+                        httpStatus -> httpStatus.value() != 200,
                         (request, response) -> {
                             if(response.getStatusCode().is4xxClientError()){
                                 throw new RuntimeException("Error 400");
-                            }else {
-                                throw new RuntimeException("Error 500");
+                            }
+                            if(response.getStatusCode().is5xxServerError()){
+                                throw new RuntimeException("Error Value");
                             }
                         }
                 )
