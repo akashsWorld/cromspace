@@ -1,6 +1,7 @@
 package com.cromxt.space.controller;
 
 import com.cromxt.space.clients.UserHttpClient;
+import com.cromxt.space.service.SpaceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -10,11 +11,11 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class SpaceController {
 
-    private final UserHttpClient userHttpClient;
+    private final SpaceService spaceService;
 
     @PostMapping(value = "/{username}")
     @ResponseStatus(HttpStatus.CREATED)
     public void createSpace(@PathVariable String username) {
-        System.out.println(userHttpClient.getUserDetails(username));
+        spaceService.createSpace(username);
     }
 }

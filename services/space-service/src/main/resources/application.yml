@@ -1,7 +1,9 @@
 SPACE_SERVICE:
+  DATABASE_USERNAME: "${DATABASE_USERNAME:admin}"
+  DATABASE_PASSWORD: "${DATABASE_PASSWORD:password}"
   SERVER_PORT: "${SERVER_PORT:8501}"
-  DATABASE_HOST: "${DATABASE_HOST:localhost}"
-  DATABASE_PORT: "${DATABASE_PORT:5431}"
+  DATABASE_HOST: "${DATABASE_HOST:127.0.0.1}"
+  DATABASE_PORT: "${DATABASE_PORT:5432}"
   DATABASE_NAME: "${DATABASE_NAME:postgres}"
   USER_SERVICE_HOST: "${USER_SERVICE_HOST:localhost}"
   USER_SERVICE_PORT: "${USER_SERVICE_PORT:9532}"
@@ -11,8 +13,8 @@ spring:
     name: space-service
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: admin
-    password: password
+    username: ${SPACE_SERVICE.DATABASE_USERNAME}
+    password: ${SPACE_SERVICE.DATABASE_PASSWORD}
     url: jdbc:postgresql://${SPACE_SERVICE.DATABASE_HOST}:${SPACE_SERVICE.DATABASE_PORT}/${SPACE_SERVICE.DATABASE_NAME}
     hikari:
       maximum-pool-size: 15
