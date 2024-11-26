@@ -1,0 +1,7 @@
+### Create Space
+POST http://127.0.0.1:{{port}}/api/v1/spaces/{{username}}
+Content-Type: application/json
+
+
+
+###

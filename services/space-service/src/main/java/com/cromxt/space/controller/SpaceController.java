@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/spaces")
+@RequestMapping(value = "/api/v1/spaces")
 @RequiredArgsConstructor
 public class SpaceController {
 
