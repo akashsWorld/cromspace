@@ -28,9 +28,9 @@ public class UserHttpClient {
     }
 
 
-    public UserDetailsResponse getUserDetails(String username) {
+    public UserDetailsResponse getUserDetails(String cromxtUsername) {
         return restClient.get()
-                .uri(BASE_URL + username)
+                .uri(BASE_URL + cromxtUsername)
                 .header("X-API-KEY", API_KEY)
                 .retrieve()
                 .onStatus(
