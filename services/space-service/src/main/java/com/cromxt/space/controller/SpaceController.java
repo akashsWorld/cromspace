@@ -1,6 +1,6 @@
 package com.cromxt.space.controller;
 
-import com.cromxt.space.clients.UserHttpClient;
+import com.cromxt.space.dtos.request.SpaceDTO;
 import com.cromxt.space.service.SpaceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ public class SpaceController {
 
     @PostMapping(value = "/{username}")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createSpace(@PathVariable String username) {
-        spaceService.createSpace(username);
+    public void createSpace(@PathVariable String username, @RequestBody SpaceDTO spaceDTO) {
+        spaceService.createSpace(username,spaceDTO);
     }
 }

@@ -2,6 +2,7 @@ package com.cromxt.space.service.impl;
 
 import com.cromxt.space.clients.UserHttpClient;
 import com.cromxt.space.clients.response.UserDetailsResponse;
+import com.cromxt.space.dtos.request.SpaceDTO;
 import com.cromxt.space.entity.SpaceEntity;
 import com.cromxt.space.repository.SpaceRepository;
 import com.cromxt.space.service.EntityMapper;
@@ -17,9 +18,9 @@ public class SpaceServiceImpl implements SpaceService {
     private final EntityMapper entityMapper;
 
     @Override
-    public void createSpace(String username) {
+    public void createSpace(String username, SpaceDTO spaceDTO) {
         UserDetailsResponse userDetails = userHttpClient.getUserDetails(username);
-        SpaceEntity spaceEntity = entityMapper.getSpaceEntity(userDetails);
-        spaceRepository.save(spaceEntity);
+//        SpaceEntity spaceEntity = entityMapper.getSpaceEntity(userDetails,);
+//        spaceRepository.save(spaceEntity);
     }
 }

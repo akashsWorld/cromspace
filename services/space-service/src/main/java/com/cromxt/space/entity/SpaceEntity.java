@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "spaces")
 @AllArgsConstructor
@@ -15,7 +17,9 @@ public class SpaceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @Column(nullable = false)
-    @NotBlank
-    private String ownerName;
+    @ManyToOne
+    @JoinColumn(name = "space_owner")
+    private SpaceUser owner;
+    private String spaceName;
+    private String description;
 }
