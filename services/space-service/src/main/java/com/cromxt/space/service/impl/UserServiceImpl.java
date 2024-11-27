@@ -29,6 +29,10 @@ public class UserServiceImpl implements UserService {
                 "lambo",
                 "http://hostname:port/cromxt/imageId"
         ),userDTO);
+        boolean exists = userRepository.existsById(spaceUser.getId());
+        if (!exists){
+            throw new RuntimeException("User already exists");
+        }
         userRepository.save(spaceUser);
     }
 

@@ -47,6 +47,10 @@ public class SpaceServiceImpl implements SpaceService {
 
     @Override
     public void deleteSpace(String spaceId) {
+        boolean exist = spaceRepository.existsById(spaceId);
+        if(!exist){
+            throw new SpaceUserNotFound("Space user not found with " + spaceId);
+        }
         spaceRepository.deleteById(spaceId);
     }
 }
