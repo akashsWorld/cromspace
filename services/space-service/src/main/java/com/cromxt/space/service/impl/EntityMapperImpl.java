@@ -33,4 +33,11 @@ public class EntityMapperImpl implements EntityMapper {
                 .profileImage(userDetails.profileImageUrl())
                 .build();
     }
+
+    @Override
+    public Space updateSpace(Space space, SpaceDTO spaceDTO) {
+        space.setSpaceName(spaceDTO.spaceName());
+        space.setDescription(spaceDTO.description());
+        return space;
+    }
 }

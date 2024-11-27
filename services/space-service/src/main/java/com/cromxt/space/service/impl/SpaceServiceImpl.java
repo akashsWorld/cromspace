@@ -31,4 +31,22 @@ public class SpaceServiceImpl implements SpaceService {
                 }
         );
     }
+
+    @Override
+    public void updateSpace(String spaceId, SpaceDTO spaceDTO) {
+        spaceRepository.findById(spaceId).ifPresentOrElse(
+                space -> {
+                    Space updatedSpace = entityMapper.updateSpace(space, spaceDTO);
+                    spaceRepository.save(updatedSpace);
+                }
+                ,()->{
+                    throw new SpaceUserNotFound("Space user not found with " + spaceId);
+                }
+        );
+    }
+
+    @Override
+    public void deleteSpace(String spaceId) {
+        spaceRepository.deleteById(spaceId);
+    }
 }

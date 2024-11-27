@@ -9,4 +9,6 @@ import com.cromxt.space.entity.SpaceUser;
 public interface EntityMapper {
     Space getSpaceEntity(SpaceUser userDetails, SpaceDTO spaceDTO);
     SpaceUser getSpaceUser(UserDetailsResponse userDetails, UserDTO userDTO);
+
+    Space updateSpace(Space space, SpaceDTO spaceDTO);
 }
