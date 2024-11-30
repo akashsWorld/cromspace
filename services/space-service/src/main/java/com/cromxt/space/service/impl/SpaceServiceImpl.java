@@ -1,6 +1,5 @@
 package com.cromxt.space.service.impl;
 
-import com.cromxt.space.clients.UserHttpClient;
 import com.cromxt.space.dtos.request.SpaceDTO;
 import com.cromxt.space.entity.Space;
 import com.cromxt.space.exception.SpaceUserNotFound;
